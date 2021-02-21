@@ -16,7 +16,7 @@ html {
     --box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
     font-size: 62.5%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    box-sizing: border-box;
+
   }
   
   *, *:before, *:after {
@@ -45,75 +45,6 @@ html {
     border: 1px solid var(--grey);
     padding: 0.5rem;
   }
-  
-  
-  /* Helper Divs */
-  
-  .wrapper {
-    max-width: 1000px;
-    margin: 4rem auto;
-    padding: 2rem;
-    background: white;
-  }
-  
-  .box, .wrapper {
-    box-shadow: 0 0 3px 5px rgba(0,0,0,0.08653);
-  }
-  a {
-    color: var(--blue);
-    text-decoration-color: var(--yellow);
-  }
-  
-  
-  a.button, button, input[type="button"] {
-    color: white;
-    background: var(--pink);
-    padding: 1rem;
-    border: 0;
-    border: 2px solid transparent;
-    text-decoration: none;
-    font-weight: 600;
-    font-size:2rem;
-  }
-  
-  :focus {
-    outline-color: var(--pink);
-  }
-  
-  fieldset {
-    border: 1px solid black;
-  }
-  
-  input:not([type="checkbox"]):not([type="radio"]), textarea, select {
-    display: block;
-    padding: 1rem;
-    border: 1px solid var(--grey);
-  }
-  
-  .success {
-    border: 1px solid red;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: white;
-    margin-top: 0;
-    line-height: 1;
-    text-shadow: var(--text-shadow);
-  }
-  .wrapper h1,
-  .wrapper h2,
-  .wrapper h3,
-  .wrapper h4,
-  .wrapper h5,
-  .wrapper h6 {
-    color: var(--black);
-    text-shadow: none;
-  }
 
   .wrap {
     position: relative;
@@ -121,10 +52,35 @@ html {
     display: grid;
     justify-content: center;
     align-items: center;
+    background-image: url("background2.jpeg");     /* image credit: Kin Wald (kintheartist.carrd.co) */
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .wrap > * {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 1;
+  }
+  .title {
+    position: absolute;
+    top: 0;
+    display: block;
+    background-color: aquamarine;
+    width: 100%;
+  }
+  .title > a {
+    text-decoration: none;
+
+  }
+  .webcam {
+    border-width: 16px;
+    border-style: solid;
+    border-image: 
+      linear-gradient(
+        to bottom, 
+        #00C853, 
+        rgba(0, 0, 0, 0)
+      ) 1 100%;
+      border-top: 2px;
   }
   .face {
     position: absolute;
