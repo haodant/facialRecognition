@@ -5,12 +5,6 @@ const faceCanvas = document.querySelector(".face");
 const ctx = videoCanvas.getContext("2d");
 const faceCtx = faceCanvas.getContext("2d");
 
-const face0 = require("./face0.png");
-const face1 = require("./face1.png")
-const face2 = require("./face2.png");
-const face3 = require("./face3.png");
-const face4 = require("./face4.png");
-const faces = [face0,face1, face2, face3, face4];
 let index = 0;
 
 const faceDetector = new FaceDetector();
@@ -86,7 +80,7 @@ function putMask({ boundingBox: face }) {
   faceCtx.imageSmoothingEnabled = false;
   faceCtx.clearRect(0, 0, faceCanvas.width, faceCanvas.height);
   base_image = new Image();
-  base_image.src = faces[index];
+  base_image.src = `face${index}.png`;
   faceCtx.drawImage(
     base_image,
     face.x - (face.width * SCALE - face.width) / 2,

@@ -64,8 +64,10 @@ html {
     position: absolute;
     top: 0;
     display: block;
-    background-color: aquamarine;
-    width: 100%;
+  }
+
+  .title h1 {
+    margin: 0;
   }
   .title > a {
     text-decoration: none;
