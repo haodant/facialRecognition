@@ -51,7 +51,7 @@ html {
     min-height: 100vh;
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     background-image: url("background2.jpeg");     /* image credit: Kin Wald (kintheartist.carrd.co) */
     background-repeat: no-repeat;
     background-size: cover;
@@ -63,12 +63,13 @@ html {
   .title {
     position: absolute;
     top: 0;
-    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
   }
 
-  .title h1 {
-    margin: 0;
-  }
   .title > a {
     text-decoration: none;
 

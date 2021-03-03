@@ -15,7 +15,7 @@ const SCALE = 1.5;
 // use a function to populate the user's video
 async function populateVideo() {
   const stream = await navigator.mediaDevices.getUserMedia({
-    video: { width: 1000, height: 800 }
+    video: { width: '100vw', height: 800 }
   });
   webcam.srcObject = stream;
   await webcam.play();
