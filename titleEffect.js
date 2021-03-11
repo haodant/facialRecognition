@@ -1,7 +1,7 @@
 /*
  ** Using Blotter.js for text effect. https://blotter.js.org/
  */
-var text = new Blotter.Text("Bian Lian", {
+var text = new Blotter.Text("Bian Lian (变脸) ", {
     family : "'Playfair Display', Proxima Nova, Futura",
     weight: 700,
     size : 100,
@@ -12,16 +12,7 @@ var text = new Blotter.Text("Bian Lian", {
 
   var blotter = new Blotter(material, { texts : text });
 
-  function animateText() {
-    material.uniforms.uSpeed.value = 0.08;
-    material.uniforms.uSineDistortSpread.value = 0.6;
-    material.uniforms.uSineDistortCycleCount.value = 2;
-    material.uniforms.uSineDistortAmplitude.value = 0.13;
-    material.uniforms.uNoiseDistortAmplitude.value = 0;
-    material.uniforms.uDistortPosition.value = [0.62, 0.47];
-    material.uniforms.uRotation.value = 170;
-  }
-  animateText();
+  static(); 
 
 
   var scope = blotter.forText(text);
@@ -31,12 +22,21 @@ var text = new Blotter.Text("Bian Lian", {
 
   scope.appendTo(title);
 
-  titleContainer.onmousemove = moveIt;
-  titleContainer.onmouseleave = animateText;
+  titleContainer.onmousemove = animateText;
+  titleContainer.onmouseleave = static;
 
-  function moveIt() {
+  function static() {
       material.uniforms.uSineDistortSpread.value = 0;
       material.uniforms.uSineDistortCycleCount.value = 0;
       material.uniforms.uSineDistortAmplitude.value = 0;
       material.uniforms.uRotation.value = 0;
+  }
+
+  function animateText() {
+    material.uniforms.uSpeed.value = 0.08;
+    material.uniforms.uSineDistortSpread.value = 0.6;
+    material.uniforms.uSineDistortCycleCount.value = 2;
+    material.uniforms.uSineDistortAmplitude.value = 0.13;
+    material.uniforms.uDistortPosition.value = [0.62, 0.47];
+    material.uniforms.uRotation.value = 170;
   }
